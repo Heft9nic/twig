@@ -1,0 +1,10 @@
+blog_show_home:
+    path:      /blog/stas
+    defaults:  { _controller: AcmeBlogBundle:Blog:stas }
+
+blog_show_user:
+    path:      /blog/{slug}
+    defaults:  { _controller: AcmeBlogBundle:Blog:show }
+    requirements:
+            slug:  \d+
+
