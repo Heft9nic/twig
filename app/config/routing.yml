@@ -1,0 +1,8 @@
+acme1_website:
+    resource: "@AcmeBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+home:
+   path:   /
+   defaults: { _controller: AcmeBlogBundle:Blog:home }
+

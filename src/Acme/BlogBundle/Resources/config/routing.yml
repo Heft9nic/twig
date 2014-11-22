@@ -6,5 +6,9 @@ blog_show_user:
     path:      /blog/{slug}
     defaults:  { _controller: AcmeBlogBundle:Blog:show }
     requirements:
-            slug:  \d+
+#            slug:  \d+
+
+show_page:
+    path:       /blog/page
+    defaults:   { _controller: AcmeBlogBundle:Blog:home }
 

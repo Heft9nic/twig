@@ -1,7 +1,42 @@
 {% extends '::base.html.twig' %}
 
+
+
+{% set prise = "qwert" %}
+{% block head %}
+        {% block title %}My cool blog posts{% endblock %}
+    {% block stylesheets  %}
+        {#<link type="text/css" rel="stylesheet" href="{{asser_url }}">#}
+        <link href="{{ asset('bundles/acmeblog/css/style.css') }}" type="text/css" rel="stylesheet" />
+        {% endblock %}
+{% endblock %}
  {% block body %}
+     <div id="Header">
      <h1>Hello {{ blog }}</h1>
+     <a href="{{ path('blog_show_user', {'slug':1}) }}">you</a>.
      <hr color="blue">
+     <ul id="nav">
+         <li id="thome"><a href="https://vk.com/stas.kirman">My page vk</a></li>
+         <li id="tguides"><a href="https://github.com/Heft9nic" class="selected">My page GitHub</a></li>
+         <li id="tmag"><a href="http://geekhub.ck.ua/">Page GeekHab</a></li>
+
+     </ul>
+     </div>
+   <div id="footer">
+       <p>{{ time|date }}</p>
+   </div>
      {#<a href="{{ url('home') }}">Home</a>#}
+     {{ prise|capitalize|lower|title }}
+     {#{% for prise in prices %}#}
+        {#{% endfor %}#}
+     {#{% for digit in range(2, 5) %}#}
+        {#{% endfor %}#}
+     {#{% if "prices" starts with "p" %}#}
+        {#{% endif %}#}
+     {#{% if prise in prices %}#}
+
+        {#{% endif %}#}
+      {#{{  "price"~"  "~"$20" }}#}
+     {#{{ "cdfd#{price}fd" }}#}
  {% endblock %}
+

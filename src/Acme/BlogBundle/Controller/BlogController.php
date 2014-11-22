@@ -23,8 +23,11 @@ class BlogController extends  Controller
     }
     public  function stasAction()
     {
+               $time = time();
         return $this->render('AcmeBlogBundle:Blog:stas.html.twig', array(
             'blog' => 'stas',
+            'time' => $time,
         ));
     }
+
 }
