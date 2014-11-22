@@ -1,0 +1,35 @@
+
+#nav {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    display: inline;
+    overflow: hidden;
+    width: 201px;
+}
+
+#nav li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    list-style-type: none;
+}
+#nav a {
+    float: left;
+    padding: 20px 0 0 0;
+    overflow: hidden;
+    height: 0px !important;
+    height /**/:20px; /* for IE5/Win */
+}
+
+#nav a:hover {
+    background-position: 0 -20px;
+}
+
+#nav a:active, #nav a.selected {
+    background-position: 0 -40px;
+}
