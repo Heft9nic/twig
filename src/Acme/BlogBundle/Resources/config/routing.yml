@@ -4,11 +4,19 @@ blog_show_home:
 
 blog_show_user:
     path:      /blog/{slug}
-    defaults:  { _controller: AcmeBlogBundle:Blog:show }
+    defaults:  { _controller: AcmeBlogBundle:Default:show }
     requirements:
-#            slug:  \d+
+            slug:  \d+
 
 show_page:
     path:       /blog/page
+    defaults:   { _controller: AcmeBlogBundle:Blog:home }
+
+new_car:
+    path:       /car/new
+    defaults:   { _controller: AcmeBlogBundle:Default:create }
+
+show_bd:
+    path:       /car/new
     defaults:   { _controller: AcmeBlogBundle:Blog:home }
 
