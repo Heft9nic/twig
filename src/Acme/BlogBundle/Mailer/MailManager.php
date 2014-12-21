@@ -25,7 +25,7 @@ class MailManager
                 'AcmeBlogBundle:Mail:' . $body . '.html.twig',
                 $parameters
             ));
-        $this->$mailer->send($message);
+        $this->mailer->send($message);
     }
 
     public function testEmail($toEmail)

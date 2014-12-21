@@ -11,8 +11,8 @@ class BlogController extends  Controller
     public function showAction($slug)
     {
         // use the $slug variable to query the database
-//        $blog = ...;
-
+//        $blog = ...
+        $this->get('my_mailer')->testEmail('heft9nic@gmail.com');
         return $this->render('AcmeBlogBundle:Blog:show.html.twig', array(
             'blog' => $slug,
         ));

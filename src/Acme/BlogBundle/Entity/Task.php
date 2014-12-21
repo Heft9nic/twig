@@ -22,6 +22,12 @@ Class Task
     private $id;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $token;
+
+
+    /**
      * @ORM\Column(type="string", length=100)
      */
     protected $task;
@@ -54,6 +60,8 @@ Class Task
      * @ORM\Column(name="slug", type="string")
      */
     private $slug;
+
+
 
     public function getTask()
     {
@@ -115,6 +123,25 @@ Class Task
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * @param mixed $token
+     * @return Task
+     */
+    public function setToken($token)
+    {
+         $this->token = $token;
+
+        return $this;
     }
 
 }
