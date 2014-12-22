@@ -19,4 +19,6 @@ new_car:
 show_bd:
     path:       /car/new
     defaults:   { _controller: AcmeBlogBundle:Blog:home }
+    methods:
+        GET
 

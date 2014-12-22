@@ -66,7 +66,21 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
-    host:      "%mailer_host%"
     username:  "%mailer_user%"
     password:  "%mailer_password%"
-    spool:     { type: memory }
+
+
+services:
+    my_mailer:
+        class:       Acme\BlogBundle\AcmeBlogBundle
+        arguments:   [sendmail]
+
+imports:
+    - { resource: "@AcmeBlogBundle/Resources/config/services.yml" }
+
+framework:
+    secret:          xxxxxxxxxx
+    form:            true
+    csrf_protection: true
+    router:        { resource: "%kernel.root_dir%/config/routing.yml" }
+

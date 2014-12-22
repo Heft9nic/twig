@@ -1,0 +1,15 @@
+acme_hello_homepage:
+    path:     /hello
+    defaults: { _controller: AcmeHelloBundle:Default:index }
+
+BlogerBlogBundle_contact:
+    pattern:  /contact
+    defaults: { _controller: AcmeHelloBundle:Default:contact }
+
+BlogerBlogBundle_guests:
+    pattern:  /guests
+    defaults: { _controller: AcmeHelloBundle:Default:guests }
+
+BlogerBlogBundle_ok:
+    pattern:  /ok
+    defaults: { _controller: AcmeHelloBundle:Default:ok }
