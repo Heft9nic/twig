@@ -1,5 +1,6 @@
 imports:
     - { resource: config.yml }
+    - { resource: "@BlogBlogBundle/Resources/config/services.xml" }
 
 #framework:
 #    validation:
