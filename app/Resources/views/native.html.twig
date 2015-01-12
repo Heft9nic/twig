@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
-        <title>{% block title %}symblog{% endblock %} - symblog</title>
-        <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        {% block stylesheets %}
-            <link href='http://fonts.googleapis.com/css?family=Irish+Grover' rel='stylesheet' type='text/css'>
-            <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
-            <link href="{{ asset('css/screen.css') }}" type="text/css" rel="stylesheet" />
+        <meta http-equiv="Content-Type" content="text/html" charset=utf-8" />
+        <title>{% block title %}Blog{% endblock %} </title>
+
+        {% block stylesheets  %}
+            {% stylesheets 'bundles/acmehello/css/screen.css' filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+            {#<link href='http://fonts.googleapis.com/css?family=Irish+Grover' rel='stylesheet' type='text/css'>#}
+            {#<link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>#}
+
         {% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -21,16 +22,16 @@
                     {% block navigation %}
                         <nav>
                             <ul class="navigation">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="{{ path('AcmeHelloBundle_homepage') }}">Home</a></li>
+                                <li><a href="{{ path('AcmeHelloBundle_about') }}">About</a></li>
+                                <li><a href="{{ path('AcmeHelloBundle_contact') }}">Contact</a></li>
                             </ul>
                         </nav>
                     {% endblock %}
                 </div>
 
                 <hgroup>
-                    <h2>{% block blog_title %}<a href="#">symblog</a>{% endblock %}</h2>
+                    <h2>{% block blog_title %}<a href="#">Blog</a>{% endblock %}</h2>
                     <h3>{% block blog_tagline %}<a href="#">creating a blog in Symfony2</a>{% endblock %}</h3>
                 </hgroup>
             </header>
@@ -44,7 +45,7 @@
 
             <div id="footer">
                 {% block footer %}
-                    Symfony2 blog tutorial - created by <a href="https://github.com/dsyph3r">dsyph3r</a>
+                    <h5><a>This page belongs Stas Kirman</a></h5>
                 {% endblock %}
             </div>
         </section>
