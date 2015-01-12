@@ -3,13 +3,10 @@ acme_hello_homepage:
     defaults: { _controller: AcmeHelloBundle:Default:index }
 
 BlogerBlogBundle_contact:
-    pattern:  /contact
+    pattern:  /contact1
     defaults: { _controller: AcmeHelloBundle:Default:contact }
 
 BlogerBlogBundle_guests:
     pattern:  /guests
     defaults: { _controller: AcmeHelloBundle:Default:guests }
 
-BlogerBlogBundle_ok:
-    pattern:  /ok
-    defaults: { _controller: AcmeHelloBundle:Default:ok }
