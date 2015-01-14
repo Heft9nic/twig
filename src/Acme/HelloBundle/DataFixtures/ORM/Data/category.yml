@@ -1,0 +1,17 @@
+Acme\HelloBundle\Entity\Blog:
+  -
+    title: "Fixtures"
+    author: "Stas"
+    blog: "datafixstures"
+    image: "images"
+    tags: "symfony"
+    created: "10-11-2013"
+    updated: "7-01-2014"
+  -
+    title: "Categoru"
+    author: "Vadim"
+    blog: "datafixstures"
+    image: "images"
+    tags: "symfony"
+    created: "11-11-2013"
+    updated: "8-01-2014"
