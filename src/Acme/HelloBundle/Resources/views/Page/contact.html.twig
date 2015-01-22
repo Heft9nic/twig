@@ -1,0 +1,29 @@
+{% extends 'AcmeHelloBundle::layout.html.twig' %}
+
+{% block title %} Blog contact {% endblock %}
+
+{% block body %}
+    <header>
+        <h1> {{ 'contents.head'|trans }} </h1>
+    </header>
+    {#error#}
+    {% if app.session.get('blogger-notice') %}
+        <div class="blogger-notice">
+          {{ app.session.flashBag('blogger-notice') }}
+        </div>
+    {% endif %}
+    <p>{{ 'contents.info'|trans }}</p>
+
+    <form action="{{ path('Blog_contact') }}" method="post" {{ form_enctype(form) }} class="blogger">
+        {{ form_errors(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.subject) }}
+        {{ form_row(form.body) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

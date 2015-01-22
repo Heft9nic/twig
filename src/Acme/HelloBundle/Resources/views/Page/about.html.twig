@@ -1,0 +1,13 @@
+{% extends 'AcmeHelloBundle::layout.html.twig' %}
+
+{% block title %} Blog {% endblock %}
+
+{% block body %}
+    <header>
+        <h1> {{ 'contents.title'|trans }} </h1>
+    </header>
+    <article>
+        <p>{{ 'contents.other'|trans }}</p>
+        <p>bla bkla bla bla bla</p>
+    </article>
+{% endblock %}

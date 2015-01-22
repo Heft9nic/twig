@@ -5,6 +5,7 @@ imports:
 framework:
     #esi:             ~
     #translator:      { fallback: "%locale%" }
+    translator: ~
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -77,6 +78,7 @@ services:
 
 imports:
     - { resource: "@AcmeBlogBundle/Resources/config/services.yml" }
+    - { resource: "@AcmeHelloBundle/Resources/config/config.yml" }
 
 framework:
     secret:          xxxxxxxxxx
@@ -84,3 +86,11 @@ framework:
     csrf_protection: true
     router:        { resource: "%kernel.root_dir%/config/routing.yml" }
 
+hautelook_alice:
+    locale: en_US   # default
+    seed: 1
+
+#fos_user:
+#    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+#    firewall_name: main
+#    user_class: Acme\HelloBundle\Entity\User

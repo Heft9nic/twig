@@ -10,7 +10,7 @@ class LoadUserData implements FixtureInterface
 {
     /**
      * {@inheritDoc}
-     */
+//     */
     public function load(ObjectManager $manager)
     {
         $task = new Task();

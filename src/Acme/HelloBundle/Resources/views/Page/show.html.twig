@@ -1,0 +1,21 @@
+{% extends 'AcmeHelloBundle::layout.html.twig' %}
+{% block title %}
+    {{ post.title }}
+{% endblock title %}
+
+{% block body %}
+    <article class="blog">
+        <header>
+            <div class="data">
+                <time datetime="{{ post.created|date('c') }}">
+                    {{ post.created|date('l, F j, Y') }}
+                </time>
+            </div>
+        </header>
+        <img src="{{ asset(post.image) }}" alt="{{ post.title }}" class="large" />
+            <div>
+                <p>{{ post.blog }}</p>
+            </div>
+    </article>
+{% endblock body %}
+

@@ -1,12 +1,30 @@
-acme_hello_homepage:
-    path:     /hello
-    defaults: { _controller: AcmeHelloBundle:Default:index }
+Blog_show:
+    path:  /{id}
+    defaults: { _controller: AcmeHelloBundle:Page:show}
+    requirements:
+        _method:  GET|POST
+        id: \d+
 
-BlogerBlogBundle_contact:
-    pattern:  /contact1
-    defaults: { _controller: AcmeHelloBundle:Default:contact }
+Blog_homepage:
+    path:  /{_locale}
+    defaults: { _controller: AcmeHelloBundle:Page:index}
+    requirements:
+        _locale: en|uk
 
-BlogerBlogBundle_guests:
-    pattern:  /guests
-    defaults: { _controller: AcmeHelloBundle:Default:guests }
+Blog_contact:
+    path:  /contact/{_locale}
+    defaults: { _controller: AcmeHelloBundle:Page:contact}
+    requirements:
+        _method:  GET|POST
+        _locale: en|uk
 
+Blog_about:
+    path:  /about/{_locale}
+    defaults: { _controller: AcmeHelloBundle:Page:about}
+    requirements:
+        _locale: en|uk
+
+
+Blog_admin:
+     path:  /admin
+     defaults: { _controller: AcmeHelloBundle:Page:admin}

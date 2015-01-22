@@ -1,0 +1,15 @@
+contents:
+    title: Про блог
+    sidebar: Бокова панель
+    info: Заповніть форму
+    head: Контакти
+    footer: Ця сторінка належить Кірману Стасу
+    index: Домашня сторінка
+    navigator:
+            home: Головна
+            contact: Контакт
+            about: Про нас
+    name:
+        title: Блог
+        tool:  написаний на Symfony2
+    other: ця частина ще в проекті

@@ -27,10 +27,9 @@ class DefaultController extends  Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($task);
             $em->flush();
-            //return $this->redirect($this->generateUrl('show_bd'));
+
         }
 
-        $this->get('acme.blog.manager.mail')->testEmail('birku1995@rambler.ru');
 
         return $this->render('AcmeBlogBundle:Default:show.html.twig', array(
             'form' => $form->createView(),

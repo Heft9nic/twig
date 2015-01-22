@@ -17,8 +17,11 @@ new_car:
     defaults:   { _controller: AcmeBlogBundle:Default:create }
 
 show_bd:
-    path:       /car/new
+    path:       /stas
     defaults:   { _controller: AcmeBlogBundle:Blog:home }
-    methods:
-        GET
 
+trans:
+    path:       /{_locale}/mes
+    defaults:   { _controller: AcmeBlogBundle:Trans:mes}
+    requirements:
+        _locale: en|uk

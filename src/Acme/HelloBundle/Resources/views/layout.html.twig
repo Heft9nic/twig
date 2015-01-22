@@ -1,0 +1,31 @@
+{% extends '::native.html.twig' %}
+
+{% block navigation %}
+    <nav>
+        <ul class="languages">
+            <li><a href="#">UK</a></li>
+            <li><a href="#">EN</a></li>
+        </ul>
+        <ul class="navigation">
+            <li><a href="{{ path('Blog_homepage') }}">{{ 'contents.navigator.home'|trans }}</a></li>
+            <li><a href="{{ path('Blog_about') }}">{{ 'contents.navigator.about'|trans }}</a></li>
+            <li><a href="{{ path('Blog_contact') }}">{{ 'contents.navigator.contact'|trans }}</a></li>
+        </ul>
+            </nav>
+{% endblock navigation %}
+
+{% block blog_title %}
+        <a href="#">{{ 'contents.name.title'|trans }}</a>
+    {% endblock blog_title %}
+
+    {% block blog_tagline %}
+        <a href="#">{{ 'contents.name.tool'|trans }}</a>
+    {% endblock blog_tagline %}
+
+    {% block sidebar %}
+        {{ 'contents.sidebar'|trans }}
+{% endblock sidebar %}
+
+{% block footer %}
+        <h5><a> {{ 'contents.footer'|trans }} </a></h5>
+{% endblock %}

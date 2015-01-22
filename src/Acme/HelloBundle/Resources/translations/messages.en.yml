@@ -1,0 +1,16 @@
+contents:
+    title: About blog
+    sidebar:  Sidebar content
+    info: Add information...
+    head: Contact
+    footer: This page belongs Stas Kirman
+    index: blog homepage
+    navigator:
+        home: Home
+        contact: Contact
+        about: About
+    name:
+        title: Blog
+        tool: creating a blog in Symfony2
+    other: This part of the project howling
+
