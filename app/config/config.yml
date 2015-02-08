@@ -4,8 +4,8 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: "%locale%" }
-    translator: ~
+    translator:      { fallback: "%locale%" }
+#    translator: ~
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -90,7 +90,23 @@ hautelook_alice:
     locale: en_US   # default
     seed: 1
 
-#fos_user:
-#    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
-#    firewall_name: main
-#    user_class: Acme\HelloBundle\Entity\User
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: Acme\HelloBundle\Entity\User
+#    registration:
+#            form:
+#                type: acme_user_registration
+    use_listener: false
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+
+knp_menu:
+    twig:
+        template: knp_menu.html.twig
+    templating: false
+    default_renderer: twig

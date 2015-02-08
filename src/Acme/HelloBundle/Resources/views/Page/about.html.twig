@@ -10,4 +10,9 @@
         <p>{{ 'contents.other'|trans }}</p>
         <p>bla bkla bla bla bla</p>
     </article>
+     <div>
+            {{ knp_menu_render('AcmeHelloBundle:Builder:mainMenu',
+            {'currentClass': 'active', 'template': 'AcmeHelloBundle:Menu:knp_menu.html.twig'}) }}
+             </div>
+
 {% endblock %}

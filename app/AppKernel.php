@@ -21,7 +21,15 @@ class AppKernel extends Kernel
             new Hautelook\AliceBundle\HautelookAliceBundle(),
             new Acme\HelloBundle\AcmeHelloBundle(),
             new Acme\BlogBundle\AcmeBlogBundle(),
-//            new FOS\UserBundle\FOSUserBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new Acme\UserBundle\UserBundle(),
+            new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+//            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

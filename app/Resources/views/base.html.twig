@@ -11,7 +11,8 @@
 
 </head>
 <body>
-{% block body %}{% endblock %}
+{% block body %}{% block fos_user_content %}
+{% endblock fos_user_content %}{% endblock %}
 {% block javascripts %}{% endblock %}
 </body>
 </html>

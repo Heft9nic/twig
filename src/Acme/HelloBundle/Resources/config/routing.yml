@@ -24,7 +24,18 @@ Blog_about:
     requirements:
         _locale: en|uk
 
+fos_user_resetting_request:
+    path:  /register
+    defaults: { _controller: FOSUserBundle:Registration:register }
+    requirements:
+        _locale: en|uk
 
 Blog_admin:
      path:  /admin
      defaults: { _controller: AcmeHelloBundle:Page:admin}
+
+fos_user_security_login:
+     path:  /login
+     defaults: { _controller: FOSUserBundle:Security:login }
+     requirements:
+        _locale: en|uk

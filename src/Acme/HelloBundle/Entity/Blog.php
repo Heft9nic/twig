@@ -65,6 +65,16 @@ class Blog
     protected $updated;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $path;
+
+    /**
+     * @var string
+     */
+    protected $file;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -245,5 +255,80 @@ class Blog
     public function setUpdatedValue()
     {
         $this->setUpdated(new \DateTime());
+    }
+
+    /**
+     * Get file.
+     *
+     * @return UploadedFile
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * Sets file.
+     *
+     * @param UploadedFile $file
+     */
+    public function setFile($file)
+    {
+        $this->file = $file;
+    }
+
+
+    protected function getUploadDir()
+    {
+        return 'images';
+    }
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->image ? null : $this->getUploadRootDir().'/'.$this->image;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function preUpload()
+    {
+        if (null !== $this->file) {
+            $this->image = uniqid().'.'.$this->file->guessExtension();
+        }
+    }
+
+    /**
+     * @ORM\PostPersist
+     */
+    public function upload()
+    {
+        if (null === $this->file) {
+            return;
+        }
+
+        $this->file->move($this->getUploadRootDir(), $this->image);
+
+        unset($this->file);
+    }
+
+    /**
+     * @ORM\PostRemove
+     */
+    public function removeUpload()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
     }
 }
