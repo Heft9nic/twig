@@ -14,5 +14,23 @@
             {{ knp_menu_render('AcmeHelloBundle:Builder:mainMenu',
             {'currentClass': 'active', 'template': 'AcmeHelloBundle:Menu:knp_menu.html.twig'}) }}
              </div>
+sdfsfssdf
+
+    <div>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <a href="{{ path('fos_user_security_logout') }}"> {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
+            <br>
+            <a href="{{ path('hwi_oauth_service_redirect', {'service': 'vkontakte' }) }}" >Add vkontakte</a>
+            <br>
+            <a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}" >Add Facebook</a>
+
+        {% else %}
+            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            <br>
+            <a href="{{ path('hwi_oauth_service_redirect', {'service': 'vkontakte' }) }}" >Sign in with vkontakte</a>
+            <br>
+            <a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}" >Sign in with Facebook</a>
+        {% endif %}
+    </div>
 
 {% endblock %}

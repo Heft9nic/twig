@@ -39,7 +39,20 @@ security:
                 csrf_provider: form.csrf_provider
             logout:       true
             anonymous:    true
+            oauth:
+                resource_owners:
+                    vkontakte:          "/login/check-vkontakte"
+                    facebook:           "/login/check-facebook"
+                login_path:        /login
+                failure_path:      /login
+                oauth_user_provider:
+                    #this is my custom user provider, created from FOSUBUserProvider - will manage the
+                    #automatic user registration on your site, with data from the provider (facebook. google, etc.)
+                    service: link_pub_user_provider
         # disables authentication for assets and the profiler, adapt it according to your needs
+        login:
+            pattern:  ^/login$
+            security: false
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false

@@ -10,8 +10,12 @@ home:
    path:   /
    defaults: { _controller: AcmeBlogBundle:Blog:home }
 
+#FosUserBundle Routes
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
 fos_user_resetting_request:
     resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
@@ -31,3 +35,22 @@ admin:
 #    resource: .
 #    type: sonata_admin
 #    prefix: /admin
+
+#HWIOAuthBundle routes
+hwi_oauth_security:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix: /login
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix: /login
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /login
+
+vkontakte_login:
+    pattern: /login/check-vkontakte
+
+facebook_login:
+    pattern: /login/check-facebook
